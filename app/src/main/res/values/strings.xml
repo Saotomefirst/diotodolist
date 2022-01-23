@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">DIO To do List</string>
     <string name="tv_tarefas">Tarefas</string>
+    <string name="mt_criar_tarefa">Criar Tarefa</string>
+    <string name="til_hint_titulo">Título</string>
+    <string name="til_hint_descricao">Descrição</string>
+    <string name="btn_cancelar">Cancelar</string>
+    <string name="btn_criar_tarefa">Criar Tarefa</string>
 </resources>
