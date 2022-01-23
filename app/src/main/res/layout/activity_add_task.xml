@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
-        app:title="@string/mt_criar_tarefa"
+        app:title="@string/label_new_task"
         app:navigationIcon="@drawable/ic_navigate_before"
         />
 
@@ -36,7 +36,7 @@
         app:layout_constraintEnd_toEndOf="@id/guide_end"
         android:layout_marginTop="16dp"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:hint="@string/til_hint_titulo"
+        android:hint="@string/label_title"
 
         >
 
@@ -56,7 +56,7 @@
         app:layout_constraintStart_toStartOf="@id/guide_start"
         app:layout_constraintEnd_toEndOf="@id/guide_end"
         android:layout_marginTop="16dp"
-        android:hint="@string/til_hint_descricao"
+        android:hint="@string/label_description"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         >
 
@@ -80,7 +80,7 @@
         app:layout_constraintEnd_toStartOf="@id/til_hour"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        android:hint="Data"
+        android:hint="@string/label_date"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         app:startIconDrawable="@drawable/ic_calendar_today"
         >
@@ -99,7 +99,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:hint="Hora"
+        android:hint="@string/label_hour"
         app:layout_constraintTop_toTopOf="@id/til_date"
         app:layout_constraintStart_toEndOf="@id/til_date"
         app:layout_constraintEnd_toEndOf="@id/guide_end"
@@ -120,7 +120,7 @@
         app:layout_constraintEnd_toEndOf="@id/guide_end"
         app:layout_constraintBottom_toTopOf="@+id/btn_new_task"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:text="@string/btn_cancelar"
+        android:text="@string/label_cancel"
         android:textAllCaps="false"
         />
     <com.google.android.material.button.MaterialButton
@@ -132,7 +132,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="16dp"
         style="@style/Widget.MaterialComponents.Button"
-        android:text="@string/btn_criar_tarefa"
+        android:text="@string/label_new_task"
         android:textAllCaps="false"
         />
 
