@@ -1,5 +1,6 @@
 package com.saotome.diotodolist.ui
 
+import android.app.Activity
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -57,6 +58,8 @@ class AddTaskActivity : AppCompatActivity() {
             )
             TaskDataSource.insertTask(task)
             Log.e("TESTE_DE_INSERCAO", "insertListeners: " + TaskDataSource.getList() )
+            setResult(Activity.RESULT_OK)
+            finish()
         }
 
         binding.btnCancel.setOnClickListener {
