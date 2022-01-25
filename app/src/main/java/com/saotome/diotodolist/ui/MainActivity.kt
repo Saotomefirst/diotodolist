@@ -3,6 +3,7 @@ package com.saotome.diotodolist.ui
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import com.saotome.diotodolist.databinding.ActivityMainBinding
 import com.saotome.diotodolist.datasource.TaskDataSource
 
@@ -25,6 +26,14 @@ class MainActivity : AppCompatActivity() {
 
         binding.fab.setOnClickListener {
             startActivityForResult(Intent(this, AddTaskActivity::class.java), CREATE_NEW_TASK)
+        }
+
+        adapter.listenerEdit = {
+            Log.e("TAG", "listenerEdit: " + it )
+        }
+
+        adapter.listenerDelete = {
+            Log.e("TAG", "listenerDelete: " + it )
         }
     }
 
