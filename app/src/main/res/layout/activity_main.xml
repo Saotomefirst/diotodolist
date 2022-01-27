@@ -17,11 +17,18 @@
         android:textColor="@color/black"
         android:layout_margin="16dp"/>
 
+    <include
+        android:id="@+id/include_empty_state"
+        layout="@layout/empty_state"
+        tools:visibility="visible"
+        android:visibility="visible"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_tasks"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:visibility="gone"
         tools:itemCount="8"
         tools:listitem="@layout/item_task"
         app:layout_constraintTop_toBottomOf="@+id/tv_title"
