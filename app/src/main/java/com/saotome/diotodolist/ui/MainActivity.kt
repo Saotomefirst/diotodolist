@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.rvTasks.adapter = adapter
 
+        updateList()
         insertListeners ()
 
     }
@@ -29,22 +30,31 @@ class MainActivity : AppCompatActivity() {
         }
 
         adapter.listenerEdit = {
-            Log.e("TAG", "listenerEdit: " + it )
+            val intent = Intent(this, AddTaskActivity::class.java)
+            intent.putExtra(AddTaskActivity.TASK_ID, it.id)
+            startActivityForResult(intent, CREATE_NEW_TASK)
+            updateList()
         }
 
         adapter.listenerDelete = {
-            Log.e("TAG", "listenerDelete: " + it )
+            TaskDataSource.deleteTask(it)
+            updateList()
         }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        if (requestCode == CREATE_NEW_TASK) {
+        if (requestCode == CREATE_NEW_TASK && resultCode == RESULT_OK) {
             binding.rvTasks.adapter = adapter
-            adapter.submitList(TaskDataSource.getList())
+            updateList()
         }
     }
+
+    private fun updateList () {
+        adapter.submitList(TaskDataSource.getList())
+    }
+
     companion object {
         private const val CREATE_NEW_TASK = 1000
     }
